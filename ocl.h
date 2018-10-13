@@ -100,7 +100,7 @@ void oclSetup(int platform, int device)
 
 	context = clCreateContext(NULL, 1, &device_id[device], NULL, NULL, &ret);
 //#if ! defined(CL_VERSION_2_0)
-	command_queue = clCreateCommandQueue(context, device_id[device], 0, &ret);
+	command_queue = clCreateCommandQueueWithProperties(context, device_id[device], 0, &ret);
 //#else
 	/*cl_queue_properties queueProps[] =
 		{ CL_QUEUE_PROPERTIES, (CL_QUEUE_ON_DEVICE && CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE), 0 };*/
